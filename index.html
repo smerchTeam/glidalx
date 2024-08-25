@@ -189,7 +189,7 @@
                 event.preventDefault();
                 const code = editor.getValue();
 
-                fetch('http://localhost:6969/loadstring', {
+                fetch('http://localhost:8050/loadstring', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'text/plain'
@@ -226,7 +226,7 @@
             }
 
             function checkLocalhost() {
-                fetch('http://localhost:6969/', { mode: 'no-cors' })
+                fetch('http://localhost:8050/', { mode: 'no-cors' })
                     .then(response => {
                         if (response.ok || response.type === 'opaque') {
                             document.getElementById('status-indicator').style.backgroundColor = 'green';
@@ -242,7 +242,7 @@
                     });
             }
 
-            setInterval(checkLocalhost, 5000);
+            setInterval(checkLocalhost, 8050);
             checkLocalhost();
 
             // Settings modal logic
